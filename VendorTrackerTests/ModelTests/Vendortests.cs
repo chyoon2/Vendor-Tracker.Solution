@@ -60,10 +60,8 @@ namespace VendorTracker.Tests
     {
       Vendor newVendor1 = new Vendor("test1", "test2");
       Vendor newVendor2 = new Vendor("test3", "test4");
-      Vendor result = Vendor.FindId(1);
+      Vendor result = Vendor.FindId(2);
       Assert.AreEqual(newVendor2, result);
-
-
     }
   }
 }

@@ -25,10 +25,10 @@ namespace VendorTracker.Models
     {
       return _orderList;
     }
-    // public static Category Find(int searchId)
-    // {
-    //   return _orderList[searchId-1];
-    // }
+    public static Order FindId(int searchId)
+    {
+      return _orderList[searchId-1];
+    }
     public static void ClearAll()
     {
       _orderList.Clear();
