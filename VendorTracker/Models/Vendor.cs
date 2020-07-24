@@ -8,7 +8,8 @@ namespace VendorTracker.Models
     public string Name{get; set;}
     public string Description{get; set;}
     public int Id {get;}
-    private static List<Vendor> _vendorList = new List<Vendor>{}; 
+    private static List<Vendor> _vendorList = new List<Vendor>{};
+    
 
     public Vendor(string name, string description)
     {
@@ -20,6 +21,10 @@ namespace VendorTracker.Models
     public static List<Vendor> GetAllVendors()
     {
       return _vendorList;
+    }
+    public static Vendor FindId(int searchId)
+    {
+      return _vendorList[searchId-1];
     }
     public static void ClearAll()
     {

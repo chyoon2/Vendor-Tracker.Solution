@@ -10,7 +10,7 @@ namespace VendorTracker.Models
     public string Title {get; set;}
     public string Description{get; set;}
     public int Id { get; }
-    private static List<Order> _instances = new List<Order>{};
+    private static List<Order> _orderList = new List<Order>{};
 
     public Order(int userPrice, string userDate, string userDescription, string userTitle)
     {
@@ -18,16 +18,20 @@ namespace VendorTracker.Models
       Date = userDate;
       Description = userDescription;
       Title = userTitle;
-      _instances.Add(this);
-      Id = _instances.Count;
+      _orderList.Add(this);
+      Id = _orderList.Count;
     }
     public static List<Order> GetAll()
     {
-      return _instances;
+      return _orderList;
     }
+    // public static Category Find(int searchId)
+    // {
+    //   return _orderList[searchId-1];
+    // }
     public static void ClearAll()
     {
-      _instances.Clear();
+      _orderList.Clear();
     }
   }
 }
