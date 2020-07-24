@@ -83,7 +83,7 @@ namespace VendorTracker.Tests
     {
       Order newOrder1 = new Order(1, "test2", "test1", "test2");
       Order newOrder2 = new Order(2, "test3", "test4", "test4");
-      Order result = Order.FindId(1);
+      Order result = Order.FindId(2);
       Assert.AreEqual(newOrder2, result);
     }
   }

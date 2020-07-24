@@ -9,7 +9,7 @@ namespace VendorTracker.Models
     public string Description{get; set;}
     public int Id {get;}
     private static List<Vendor> _vendorList = new List<Vendor>{};
-    
+    public List<Order> OrdersPerVendorList {get; set;}
 
     public Vendor(string name, string description)
     {
@@ -17,6 +17,10 @@ namespace VendorTracker.Models
       Description = description;
       _vendorList.Add(this);
       Id = _vendorList.Count;
+    }
+    public void AddOrder(Order order)
+    {
+      OrdersPerVendorList.Add(order);
     }
     public static List<Vendor> GetAllVendors()
     {

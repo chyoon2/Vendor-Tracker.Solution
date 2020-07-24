@@ -63,5 +63,16 @@ namespace VendorTracker.Tests
       Vendor result = Vendor.FindId(2);
       Assert.AreEqual(newVendor2, result);
     }
+    [TestMethod]
+    public void AddOrder_ReturnsListWithOrderObjectsThatAreContainedWithinTheGivenVendor_OrdersInVendorList()
+    {
+      Order newOrder = new Order(1, "testDate", "testDescription", "test3");
+      Vendor newVendor = new Vendor("testVendorName","testDescription");
+      List<Order> newList = new List<Order> { newOrder };
+      newVendor.AddOrder(newOrder);
+      List<Order> result = newVendor.OrdersPerVendorList;
+      
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
