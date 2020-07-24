@@ -1,0 +1,9 @@
+@using VendorTracker.Models;
+
+<p>@Model["orders"].Title</p>
+<p>@Model["orders"].Date</p>
+<p>@Model["orders"].Description</p>
+<p>@Model["orders"].Price</p>
+
+<a href='/vendors/@Model["vendor"].Id'> Back to @Model["vendor"] orders</a>
+<a href='/vendors'> Back to Vendor List</a>
