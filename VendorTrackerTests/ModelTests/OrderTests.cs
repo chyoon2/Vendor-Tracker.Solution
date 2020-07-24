@@ -23,12 +23,12 @@ namespace VendorTracker.Tests
       Assert.AreEqual(testOrder, result);
     }
     [TestMethod]
-    public void AddToList_ReturnsEmptyList_ItemList()
+    public void GetList_ReturnsEmptyList_ItemList()
     {
       int test = 0;
       Order newOrder = new Order(test);
       List<Order> newList = new List<Order> { };
-      List<Order> result = Order.OrderList;
+      List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
   }
