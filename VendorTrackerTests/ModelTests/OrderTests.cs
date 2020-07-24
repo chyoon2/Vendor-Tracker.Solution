@@ -11,7 +11,7 @@ namespace VendorTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceofOrder_Order()
     {
-      Order newOrder = new Order();
+      Order newOrder = new Order(5);
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
     [TestMethod]
@@ -21,6 +21,15 @@ namespace VendorTracker.Tests
       Order newOrder = new Order(testOrder);
       int result = newOrder.Quantity;
       Assert.AreEqual(testOrder, result);
+    }
+    [TestMethod]
+    public void AddToList_ReturnsEmptyList_ItemList()
+    {
+      int test = 0;
+      Order newOrder = new Order(test);
+      List<Order> newList = new List<Order> { };
+      List<Order> result = Order.OrderList;
+      CollectionAssert.AreEqual(newList, result);
     }
   }
 }
