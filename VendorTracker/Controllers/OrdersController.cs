@@ -7,14 +7,14 @@ namespace VendorTracker.Controllers
 {
   public class OrdersController : Controller
   {
-    [HttpGet("/vendors/{id}/order/{orderId}")]
+    [HttpGet("/vendors/{id}/orders/{orderId}")]
     public ActionResult Show(int id, int orderId)
     {
       Vendor newVendor = Vendor.FindId(id);
       Order newOrder = Order.FindId(orderId);
       Dictionary<string, object> model = new Dictionary<string,object>(){};
       model.Add("order", newOrder);
-      model.Add("vendor", newOrder);
+      model.Add("vendor", newVendor);
       return View(model);
     }
 
