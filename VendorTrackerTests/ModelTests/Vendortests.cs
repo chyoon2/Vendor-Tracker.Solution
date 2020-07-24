@@ -67,11 +67,11 @@ namespace VendorTracker.Tests
     public void AddOrder_ReturnsListWithOrderObjectsThatAreContainedWithinTheGivenVendor_OrdersInVendorList()
     {
       Order newOrder = new Order(1, "testDate", "testDescription", "test3");
-      Vendor newVendor = new Vendor("testVendorName","testDescription");
       List<Order> newList = new List<Order> { newOrder };
+      Vendor newVendor = new Vendor("testVendorName","testDescription");
       newVendor.AddOrder(newOrder);
       List<Order> result = newVendor.OrdersPerVendorList;
-      
+
       CollectionAssert.AreEqual(newList, result);
     }
   }

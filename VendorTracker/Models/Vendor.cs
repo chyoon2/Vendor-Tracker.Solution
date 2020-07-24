@@ -17,11 +17,14 @@ namespace VendorTracker.Models
       Description = description;
       _vendorList.Add(this);
       Id = _vendorList.Count;
+      OrdersPerVendorList = new List<Order>{};
     }
+
     public void AddOrder(Order order)
     {
       OrdersPerVendorList.Add(order);
     }
+
     public static List<Vendor> GetAllVendors()
     {
       return _vendorList;
