@@ -6,8 +6,13 @@ using System;
 namespace VendorTracker.Tests
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+    Order.ClearAll();
+    }
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceofOrder_Order()
     {
@@ -27,20 +32,22 @@ namespace VendorTracker.Tests
     {
       int test = 0;
       Order newOrder = new Order(test);
-      List<Order> newList = new List<Order> { };
+      List<Order> newList = new List<Order> {newOrder};
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
      [TestMethod]
     public void GetAll_ReturnsItems_ItemList()
-  
     {
-      int description01 = 1;
-      int description02 = 2;
-      Order newOrder1 = new Order(description01);
-      Order newOrder2 = new Order(description02);
-      List<Order> newList = new List<Order> { newOrder2 };
-
+      int test1 = 1;
+      int test2 = 2;
+      Order newOrder1 = new Order(test1);
+      Order newOrder2 = new Order(test2);
+      List<Order> newList = new List<Order> { newOrder1, newOrder2 };
+      foreach(Order x in newList)
+      {
+        Console.WriteLine(x.Quantity);
+      }
       List<Order> result = Order.GetAll();
       CollectionAssert.AreEqual(newList, result);
     }
