@@ -29,10 +29,12 @@ namespace VendorTracker.Models
     {
       return _vendorList;
     }
+    
     public static Vendor FindId(int searchId)
     {
       return _vendorList[searchId-1];
     }
+
     public static void ClearAll()
     {
       _vendorList.Clear();
