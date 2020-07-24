@@ -5,10 +5,9 @@ using System.Collections.Generic;
 
 namespace VendorTracker.Controllers
 {
-  public class OrdersControllers : Controllers
+  public class OrdersController : Controller
   {
-    [HttpGet(/vendors/{id}/order/{orderId})]
-    //showing the details of one order
+    [HttpGet("/vendors/{id}/order/{orderId}")]
     public ActionResult Show(int id, int orderId)
     {
       Vendor newVendor = Vendor.FindId(id);
@@ -16,9 +15,10 @@ namespace VendorTracker.Controllers
       Dictionary<string, object> model = new Dictionary<string,object>(){};
       model.Add("order", newOrder);
       model.Add("vendor", newOrder);
-      return View (model)
+      return View(model);
     }
-    [HttpGet(/vendors/{id}/orders/new)]
+
+    [HttpGet("/vendors/{id}/orders/new")]
     public ActionResult New(int id)
     {
       Vendor newVendor = Vendor.FindId(id);
