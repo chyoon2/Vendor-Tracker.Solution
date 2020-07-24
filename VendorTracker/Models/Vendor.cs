@@ -13,7 +13,7 @@ namespace VendorTracker.Models
     {
       Name = name;
       Description = description;
-      
+      Id =1;
     }
   }
 }

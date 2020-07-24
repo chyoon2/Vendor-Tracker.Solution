@@ -42,8 +42,6 @@ namespace VendorTracker.Tests
       string description = "test2";
       Vendor newVendor = new Vendor(name, description);
       int result = newVendor.Id;
-
-      //Assert
       Assert.AreEqual(1, result);
     }
   }
