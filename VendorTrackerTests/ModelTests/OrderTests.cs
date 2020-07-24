@@ -14,5 +14,13 @@ namespace VendorTracker.Tests
       Order newOrder = new Order();
       Assert.AreEqual(typeof(Order), newOrder.GetType());
     }
+    [TestMethod]
+    public void GetQuantityInput_ReturnsQuantityInput_Int()
+    {
+      int testOrder = 5;
+      Order newOrder = new Order(testOrder);
+      int result = newOrder.Quantity;
+      Assert.AreEqual(testOrder, result);
+    }
   }
 }
